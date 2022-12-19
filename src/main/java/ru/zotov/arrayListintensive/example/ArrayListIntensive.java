@@ -1,8 +1,5 @@
 package ru.zotov.arrayListintensive.example;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Iterator;
 
 public class ArrayListIntensive<E> implements Teams<E> {
