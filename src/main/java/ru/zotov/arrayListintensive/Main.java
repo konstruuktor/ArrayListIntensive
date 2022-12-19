@@ -1,6 +1,7 @@
 package ru.zotov.arrayListintensive;
 
 import ru.zotov.arrayListintensive.example.ArrayListIntensive;
+import ru.zotov.arrayListintensive.example.QuickSort;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,12 @@ public class Main {
 
         int v = testlist.size();
         System.out.println(v);
+
+        QuickSort<Integer> quickSort = new QuickSort<>();
+        Integer[] sorted = quickSort.sort(testlist);
+
+        ArrayListIntensive<Integer> sortedlist = new ArrayListIntensive<>(sorted);
+        System.out.println(sortedlist);
 
         testlist.update(8, 777);
         System.out.println(testlist);

@@ -1,20 +1,22 @@
 package ru.zotov.arrayListintensive.example;
 
-import ru.zotov.arrayListintensive.example.SimpleIterator;
-import ru.zotov.arrayListintensive.example.Teams;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Objects;
 
 public class ArrayListIntensive<E> implements Teams<E> {
-    private E[] values;
+    public E[] values = (E[]) new Object[0];
 
     public ArrayListIntensive() {
-        values = (E[]) new Object[0];
     }
 
+    public ArrayListIntensive(E[] objects){
+        this.values = objects;
+    }
     /**
      * Добавляет новый элемент в коллекцию
+     *
      * @param e новый элемент, который будет добавлен
      * @return результат успешности добавления
      */
@@ -34,6 +36,7 @@ public class ArrayListIntensive<E> implements Teams<E> {
 
     /**
      * Удаляет элемент по индексу
+     *
      * @param index индекс удаляемого элемента
      */
     @Override
@@ -50,6 +53,7 @@ public class ArrayListIntensive<E> implements Teams<E> {
 
     /**
      * Получение элемента по индексу
+     *
      * @param index индекс получаемого элемента
      * @return возвращает полученный по индексу элемент
      */
@@ -60,6 +64,7 @@ public class ArrayListIntensive<E> implements Teams<E> {
 
     /**
      * Получение размера ArrayList
+     *
      * @return возвращает размер ArrayList
      */
     @Override
@@ -69,8 +74,9 @@ public class ArrayListIntensive<E> implements Teams<E> {
 
     /**
      * Изменение элемента ArrayList
+     *
      * @param index Индекс изменяемого элемента
-     * @param e новое значение, которым заменяем существующее
+     * @param e     новое значение, которым заменяем существующее
      */
     @Override
     public void update(int index, E e) {
@@ -92,6 +98,7 @@ public class ArrayListIntensive<E> implements Teams<E> {
 
     /**
      * Стандартное переопределение метода toString для отображения в виде строки
+     *
      * @return
      */
     public String toString() {
@@ -109,4 +116,6 @@ public class ArrayListIntensive<E> implements Teams<E> {
             sb.append(',').append(' ');
         }
     }
+
+
 }
