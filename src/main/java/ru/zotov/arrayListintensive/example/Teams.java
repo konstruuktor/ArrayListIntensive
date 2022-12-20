@@ -8,4 +8,5 @@ public interface Teams<E> extends Iterable<E> {
     int size();
     void update(int index, E e);
     void clear();
+    boolean add(E e, int index);
 }

@@ -25,6 +25,18 @@ class ArrayListIntensiveTest {
         //then
         assertEquals(value, arraylist.get(0));
     }
+    @Test
+    void addMyIndex() {
+        //given
+        arraylist.add(1);
+        arraylist.add(2);
+        arraylist.add(4);
+         //when
+        arraylist.add(3, 2);
+        //then
+        assertEquals(4, arraylist.size());
+        assertEquals(3, arraylist.get(2));
+    }
 
     @Test
     void delete() {

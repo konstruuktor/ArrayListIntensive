@@ -8,9 +8,10 @@ public class ArrayListIntensive<E> implements Teams<E> {
     public ArrayListIntensive() {
     }
 
-    public ArrayListIntensive(E[] objects){
+    public ArrayListIntensive(E[] objects) {
         this.values = objects;
     }
+
     /**
      * Добавляет новый элемент в коллекцию
      *
@@ -30,7 +31,6 @@ public class ArrayListIntensive<E> implements Teams<E> {
         }
         return false;
     }
-
     /**
      * Удаляет элемент по индексу
      *
@@ -47,7 +47,6 @@ public class ArrayListIntensive<E> implements Teams<E> {
             ex.printStackTrace();
         }
     }
-
     /**
      * Получение элемента по индексу
      *
@@ -113,6 +112,19 @@ public class ArrayListIntensive<E> implements Teams<E> {
             sb.append(',').append(' ');
         }
     }
-
+    @Override
+    public boolean add(E e, int index) {
+        try {
+            E[] temp = values;
+            values = (E[]) new Object[temp.length + 1];
+            System.arraycopy(temp, 0, values, 0, index);
+            values[index] = e;
+            System.arraycopy(temp, index, values, index + 1, temp.length - index - 1);
+            return true;
+        } catch (ClassCastException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
 
 }
