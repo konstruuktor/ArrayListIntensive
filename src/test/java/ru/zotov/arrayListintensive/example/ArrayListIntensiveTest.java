@@ -25,13 +25,14 @@ class ArrayListIntensiveTest {
         //then
         assertEquals(value, arraylist.get(0));
     }
+
     @Test
     void addMyIndex() {
         //given
         arraylist.add(1);
         arraylist.add(2);
         arraylist.add(4);
-         //when
+        //when
         arraylist.add(3, 2);
         //then
         assertEquals(4, arraylist.size());
@@ -112,5 +113,17 @@ class ArrayListIntensiveTest {
         String result = arraylist.toString();
         //then
         assertEquals("[5]", result);
+    }
+
+    @Test
+    void testAdd() {
+        //given
+        ArrayListIntensive<Object> objects = new ArrayListIntensive<>();
+        //when
+        for (int i = 0; i < 1000; i++) {
+            objects.add(new Object(), 0);
+        }
+        //then
+        assertEquals(1000, objects.size());
     }
 }
